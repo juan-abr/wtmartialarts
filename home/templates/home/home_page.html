@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags wagtailimages_tags%}
+
+{% block body_class %}template-homepage{% endblock %}
+
+{% block extra_css %}
+    {% comment %}
+    Delete the line below if you're just getting started and want to remove the welcome screen!
+    {% endcomment %}
+    {#<link rel="stylesheet" href="{% static 'css/welcome_page.css' %}">#}
+{% endblock extra_css %}
+
+{% block content %}
+    {% comment %}
+    Delete the line below if you're just getting started and want to remove the welcome screen!
+    {% endcomment %}
+    {#% include 'home/welcome_page.html' %#}
+    {% comment %}
+    <div class="position-relative overflow-hidden pl-3 pl-md-5 m-md-3 bg-dark">
+        <div class="row">
+            <div class="z-0 text-bg-dark col-lg-8 p-lg-5">
+                <h1 class="display-4 fw-normal">Welcome to {{ page.title }}</h1>
+                <p class="lead fw-normal">{{ page.intro }}</p>
+                <p class="btn btn-outline-light" href="#">Get Started</p>
+            </div>
+            <div class="z-n1">
+                <img src="/static/frontpage.jpg" alt="CMMA">
+            </div>
+            <div class="col-lg-4 d-lg-block d-none">
+                <img class="img-fluid img-hero" src="/static/hero.png" alt="CMMA">
+            </div>
+        </div>
+    </div>
+
+
+
+    {% endcomment %}
+    {% for item in page.gallery_images.all %}
+        {% if forloop.first %}
+            <div class="position-relative overflow-hidden pl-3 pl-md-5 m-md-3 bg-light">
+                <div class="row">
+                    <div class="text-bg-light">
+                        <div class="card">
+                            {#<img src="/static/frontpage.jpg" class="img-fluid card-img"  alt="CMMA">#}
+                            {#% image item.image fill-640x640 class="card-img" style="object-fit: cover; object-position:100% 0;" %#}
+                            {% image item.image fill-700x500 class="card-img" style="object-fit: cover; object-position:75% 0;" %}
+                            <div class="card-img-overlay">
+                                <h1 class="card-title">Welcome to {{ page.title }}</h1>
+                                <p class="card-text">{{ page.intro }}</p>
+                                <p class="btn btn-outline-dark" href="#">Get Started</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            {% if forloop.counter0|divisibleby:"2" %}
+                <div class="row row-cols-1 row-cols-md-2  d-md-flex flex-md-equal w-100 my-md-3 ps-md-4">
+                    <div class="col d-flex">
+                        <div class="card">
+                            {% image item.image fill-704x380 class="card-img" style="object-fit: cover; object-position:100% 0;" %}
+                        </div>
+                    </div>
+                    <div class="col d-flex"> 
+                        <div class="card bg-danger">
+                            <div class="me-md-3 pt-3 pt-md-5 px-md-5 overflow-hidden">
+                                <h2 class="display-5">{{ item.heading }}</h2>
+                                <p class="lead fw-normal">{{ item.caption }}</p>
+                                <p class="btn btn-outline-dark" href="{{ item.button_url }}">{{ item.button_name }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                <div class="row row-cols-1 row-cols-md-2  d-md-flex flex-md-equal w-100 my-md-3 ps-md-4">
+                    <div class="col d-flex"> 
+                        <div class="card bg-dark text-bg-dark">
+                            <div class="me-md-3 pt-3 pt-md-5 px-md-5 overflow-hidden">
+                                <h2 class="display-5">{{ item.heading }}</h2>
+                                <p class="lead">{{ item.caption }}</p>
+                                <p class="btn btn-outline-light" href="{{ item.button_url }}">{{ item.button_name }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col d-flex">
+                        <div class="card">
+                            {% image item.image fill-704x380 class="card-img" style="object-fit: cover; object-position:100% 0;" %}
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+{% endblock content %}

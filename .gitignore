@@ -1,0 +1,8 @@
+*.pyc
+*.db
+
+./media/images/*
+./media/original_images/*
+
+./wtmartialarts/static/css/*
+./wtmartialarts/static/js/*

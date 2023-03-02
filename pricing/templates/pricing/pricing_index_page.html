@@ -1,0 +1,200 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags %}
+
+{% block body_class %}template-pricingindexpage{% endblock %}
+
+{% block extra_css %}
+{% endblock extra_css %}
+
+{% block content %}
+    <div class="container py-3">
+        <div class="p-3 pb-md-4 mx-auto text-center" style="width:400px">
+            <h1 class="display-4 fw-normal">
+                {#{ page.title }#}
+                Classes
+            </h1>
+
+
+            <!-- wagtail tags aren't working with bootstrap classes -->
+            <p class="fs-5 text-muted">
+                {#{ page.intro|richtext }#}
+                Test text
+            </p>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2 mb-5 text-center">
+            <div class="col d-flex"> 
+                <div class="card border-0">
+                    <div class="me-md-3 pt-3 pt-md-5 px-md-5 overflow-hidden">
+                        <h2 class="display-6 fw-normal">Beginner Youth Class</h2>
+                        <p class="lead fw-normal">Introduce your kids to the basics and fundamentals of Tang Soo Do. A perfect starter class for any kids to start their journey or to give it a try!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col d-flex"> 
+                <div class="card border-0">
+                    <div class="me-md-3 pt-3 pt-md-5 px-md-5 overflow-hidden">
+                        <h2 class="display-6 fw-normal">Youth Class</h2>
+                        <p class="lead fw-normal">Students in this class build off the foundation of basics learned in the Beginner Youth Class and hone more difficult techniques. Students begin to learn more intermediate-advanced level forms. This class also includes introductions to fighting, weapons, breaking, ground fighting, and more.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2 mb-5 text-center">
+            <div class="col d-flex"> 
+                <div class="card border-0">
+                    <div class="me-md-3 pt-3 pt-md-5 px-md-5 overflow-hidden">
+                        <h2 class="display-6 fw-normal">Adult Class</h2>
+                        <p class="lead fw-normal">This is a class for students ages 14 and up and will cover all ranges of Tang Soo Do training in a progressive manner.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col d-flex"> 
+                <div class="card border-0">
+                    <div class="me-md-3 pt-3 pt-md-5 px-md-5 overflow-hidden">
+                        <h2 class="display-6 fw-normal">FIMAP</h2>
+                        <p class="lead fw-normal">A traditional <strong>Filipino Indonesian Martial Arts Program</strong> emphasizing weapon based fighting with sticks, knives, bladed weapons, and various improvised weapons, as well as "open handed" techniques without weapons.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% comment %}
+        <h2 class="display-6 text-center mb-4">Compare Classes</h2>
+        <div class="table-responsive">
+            <table class="table text-center">
+                <thead>
+                    <tr>
+                        <th class="width: 28%;"></th>
+                        <th style="width: 18%;">Beginner Youth Class</th>
+                        <th style="width: 18%;">Youth Class</th>
+                        <th style="width: 18%;">FIMAP</th>
+                        <th style="width: 18%;">Adult Class</th>
+                    </tr>
+                    <tbody>
+                        <tr>
+                            <th class="text-start" scope="row">Forms</th>
+                        </tr>
+                        <tr>
+                            <th class="text-start" scope="row">Sparring</th>
+                        </tr>
+                        <tr>
+                            <th class="text-start" scope="row">Breaking Techniques</th>
+                        </tr>
+                        <tr>
+                            <th class="text-start" scope="row">Bo Staff Training</th>
+                        </tr>
+                        <tr>
+                            <th class="text-start" scope="row">Knife Training</th>
+                        </tr>
+                    </tbody>
+                </thead>
+            </table>
+        </div>
+        {% endcomment %}
+        <div class="p-3 pb-md-4 mx-auto text-center" style="width:400px">
+            <h1 class="display-4 fw-normal">
+                Pricing
+            </h1>
+            <p class="fs-5 text-muted">
+                Get a Free Trial <a href="#">Here</a>.
+            </p>
+        </div>
+        <div class="row row-cols-1 row-cols-md-5 mb-3 text-center">
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                    <div class="card-header py-3">
+                        <h4 class="my-0 fw-normal">Punch Pass</h4>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="card-title">
+                            $17.5
+                            <small class="text-muted fw-light">/pass</small>
+                        </h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>10 discountd day passses</li>
+                            <li>Save $75 overall</li>
+                            <li>Never expire</li>
+                        </ul>
+                        <a href="https://clients.mindbodyonline.com/classic/ws?studioid=453931&stype=41&sTG=22&prodId=101209" class="w-100 btn btn-lg btn-outline-primary" type="button">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                    <div class="card-header py-3">
+                        <h4 class="my-0 fw-normal">Day Pass</h4>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="card-title">
+                            $25
+                            <small class="text-muted fw-light">/day</small>
+                        </h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Climb all day</li>
+                            <li>Access to weight room</li>
+                            <li>Join yoga or group classes</li>
+                        </ul>
+                        <button class="w-100 btn btn-lg btn-outline-primary" type="button">Buy now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                    <div class="card-header py-3">
+                        <h4 class="my-0 fw-normal">1 Student</h4>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="card-title">
+                            $125
+                            <small class="text-muted fw-light">/mo</small>
+                        </h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>List</li>
+                            <li>of</li>
+                            <li>Perks</li>
+                        </ul>
+                        <button class="w-100 btn btn-lg btn-primary" type="button">Get Started</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                    <div class="card-header py-3">
+                        <h4 class="my-0 fw-normal">2 students</h4>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="card-title">
+                            $215
+                            <small class="text-muted fw-light">/mo</small>
+                        </h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>List</li>
+                            <li>of</li>
+                            <li>Perks</li>
+                        </ul>
+                        <button class="w-100 btn btn-lg btn-primary" type="button">Get Started</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                    <div class="card-header py-3 text-bg-primary border-primary">
+                        <h4 class="my-0 fw-normal">3 Students</h4>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="card-title">
+                            $275
+                            <small class="text-muted fw-light">/mo</small>
+                        </h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>List</li>
+                            <li>of</li>
+                            <li>Perks</li>
+                        </ul>
+                        <button class="w-100 btn btn-lg btn-primary" type="button">Get Started</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
